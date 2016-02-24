@@ -1,0 +1,22 @@
+<div id="formDatos" >
+    <h1>{{ctrl.titulo}}</h1>
+    <h3>{{ctrl.subTitulo}}</h3>
+    <h3>Probar que carga este</h3>
+    <form >
+        <input type="date" placeHolder="1. Fecha del documento"                  ng-model="ctrl.factura.fechaDocumento"/>
+        <input type="text" placeHolder="2. CI o Ruc del vendedor"                ng-model="ctrl.factura.rucVendedor"/>
+        <input type="text" placeHolder="3. Nombre y Apellido o Razón Social del Vendedor" ng-model="ctrl.factura.razonSocialVendedor"/>
+        <input type="text" placeHolder="4. Número del Documento" ng-model="ctrl.factura.numeroDocumento"/>
+        <input type="text" placeHolder="5. Numero Timbrado" ng-model="ctrl.factura.timbrado"/>
+        <input type="text" placeHolder="6. Tipo del Documento" ng-model="ctrl.factura.tipoDocumento"/>
+        <input type="number" placeHolder="7. Monto de la compra" ng-model="ctrl.factura.monto"/>
+        <input type="number" placeHolder="8. Total IVA" ng-model="ctrl.factura.iva"/>
+        <input type="number" placeHolder="9. Monto de lo pagado en caso de compras a crédito" ng-model="ctrl.factura.totalPagado"/>
+        <input type="number" placeHolder="10. Total Comprobante" ng-model="ctrl.factura.total"/>
+        <input type="text" placeHolder="11. C.I. o RUC del Titular del Comprobante" ng-model="ctrl.factura.rucTitular"/>
+        <input type="text" placeHolder="12. Observación" ng-model="ctrl.factura.observacion"/>
+        <label>Gasto o inversion</label><input name="tipoInversion" type="text" ng-model="ctrl.factura.tipoInversion"/>
+        <button ng-click="ctrl.save()">Enviar</button>
+        <button ui-sref="egresos">volver</button>
+    </form>
+</div>

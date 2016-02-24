@@ -1,0 +1,44 @@
+
+<md-button class="md-fab" ng-click="facturasList.abrirFactuNew()">
+            <md-icon md-font-set="material-icons"> add </md-icon>
+</md-button>
+
+<table>
+    <thead>
+        <tr>
+            <th>1. Fecha</th>
+            <th>2. R.U.C Vendedor</th>
+            <th>3. Timbrado</th>
+            <th>4. Categoria</th>
+            <th>5. Numero documento</th>
+            <th>6. Razon Social Vendedor</th>
+            <th>7. Monto</th>
+            <th>8. I.V.A</th>
+            <th>9. Total</th>
+            <th>10. Total Pagado</th>
+            <th>11. Ruc Titular</th>
+            <th>12. Observacion</th>
+            <th>13. Tipo Inversion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>  
+  <tr ng-repeat="factura in facturasList.facturas">
+      
+      <td>{{ factura.fechaDocumento | date}}</td>
+      <td>{{ factura.rucVendedor }}</td>
+      <td>{{ factura.timbrado }}</td>
+      <td>{{ factura.categoria }}</td>
+      <td>{{ factura.numeroDocumento }}</td>
+      <td>{{ factura.razonSocialVendedor }}</td>
+      <td>{{ factura.monto | currency:'Gs.':0}}</td>
+      <td>{{ factura.iva | currency}}</td>
+      <td>{{ factura.total | currency}}</td>
+      <td>{{ factura.totalPagado | currency:"Gs.":0 }}</td>
+      <td>{{ factura.rucTitular }}</td>
+      <td>{{ factura.observacion }}</td>
+      <td>{{ factura.tipoInversion }}</td>
+      
+      <td><a ng-click="facturasList.remove(factura)">X</a>
+          <a ui-sref="facturaEdit({ facturaId: factura._id })">Editar</a></td>
+  </tr>
+</table>
